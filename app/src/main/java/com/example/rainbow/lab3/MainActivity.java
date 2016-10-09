@@ -2,6 +2,8 @@ package com.example.rainbow.lab3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -31,12 +33,24 @@ public class MainActivity extends AppCompatActivity {
             {"Phoebe","17895466428","手机","山东东营移动","c48d30"}
     };
     List<Map<String, Object>> data = new ArrayList<>();
-    for (int i =1; i < 11; i++){
+
+    for(int i = 1; i < 11; i++){
         Map<String, Object> temp = new LinkedHashMap<>();
         for(int j = 0; j < 5; j++)
             temp.put(alldata[0][j], alldata[i][j]);
         data.add(temp);
     }
+
+    List<Map<String, Object>> data1 = new ArrayList<>();
+    for(int i = 1; i < 11; i++){
+        Map<String, Object> temp = new LinkedHashMap<>();
+        temp.put("首字母", alldata[i][0].substring(0,1));
+        temp.put("姓名", alldata[i][0]);
+        data1.add(temp);
+    }
+    ListView listview = (ListView)findViewById(R.id.contacts_list);
+    SimpleAdapter simpleAdapter = new SimpleAdapter(this, data, R.layout.activity_main,
+            new String[]{"首字母","姓名"}, new int[]{R.id.name_abbr, R.id.name_full});
 
 
 
