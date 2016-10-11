@@ -8,7 +8,14 @@
     <dimen name="full_name_size">18sp</dimen>
     <dimen name="abbr_name_size">20sp</dimen>
     <dimen name="detail_name_size">25sp</dimen>
-    <dimen name="detail_back_margin">10dp</dimen>
-    <dimen name="detail_star_margin">10dp</dimen>
-    <dimen name="detail_name_margin">10dp</dimen>
+    <dimen name="detail_back_marginTop">10dp</dimen>
+    <!--
+    <dimen name="detail_star_marginRight">10dp</dimen>
+    <dimen name="detail_chat_marginLeftRight">10dp</dimen>
+    -->
+
+    <dimen name="detail_name_marginBottom">20dp</dimen>
+    <dimen name="type_where_space">20dp</dimen>
+    <dimen name="detail_margin">20dp</dimen>
+    <dimen name="line_marginLeftRight">10dp</dimen>
 </resources>

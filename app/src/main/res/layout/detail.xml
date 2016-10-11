@@ -10,8 +10,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
 
-
-
         >
 
         <ImageButton
@@ -20,8 +18,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_margin="@dimen/detail_back_margin"
-            android:src="@mipmap/back_icon"
+            android:layout_marginTop="@dimen/detail_back_marginTop"
+            android:layout_marginLeft="@dimen/detail_margin"
+            android:background="@drawable/back"
             android:padding="0dp"
             />
 
@@ -31,12 +30,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignLeft="@+id/back_button"
-            android:layout_marginBottom="@dimen/detail_name_margin"
+            android:layout_marginBottom="@dimen/detail_name_marginBottom"
             android:textSize="@dimen/detail_name_size"
             android:textColor="@color/detail_name_white"
             android:padding="0dp"
-
-
 
 
 
@@ -46,11 +43,12 @@
             android:id="@+id/detail_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/star_launcher"
-            android:layout_marginRight="@dimen/detail_star_margin"
+            android:background="@drawable/empty_star"
+            android:layout_marginRight="@dimen/detail_margin"
             android:layout_alignBottom="@+id/detail_name"
             android:layout_alignParentRight="true"
-            android:padding="0dp" />
+            android:padding="0dp"
+            />
 
     </RelativeLayout>
 
@@ -59,23 +57,108 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="2"
-        android:background="@color/detail_background">
+        >
 
-
-        <ListView
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/detail_information_list">
+            >
+            <LinearLayout
+                android:id="@+id/num_type_where_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/detail_margin"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp">
 
-        </ListView>
+                <TextView
+                    android:id="@+id/phone_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/detail_black"
+
+                    android:text="18854211875"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/detail_gray"
+
+
+
+                        android:text="手机"/>
+
+                    <TextView
+                        android:id="@+id/where"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/detail_gray"
+                        android:layout_marginLeft="@dimen/type_where_space"
+
+
+                        android:text="山东青岛移动"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:background="@color/detail_background"
+                android:layout_centerVertical="true"
+                android:layout_alignTop="@+id/chat_button"
+                android:layout_alignBottom="@+id/chat_button"
+                android:layout_toLeftOf="@+id/chat_button"
+                />
+
+            <ImageButton
+                android:id="@+id/chat_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/detail_margin"
+                android:layout_marginLeft="@dimen/detail_margin"
+                android:padding="0dp"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/detail_background"
+            android:layout_marginLeft="@dimen/line_marginLeftRight"
+            android:layout_marginRight="@dimen/line_marginLeftRight"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多资料"
+            android:textColor="@color/detail_black"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/detail_margin"
+            android:layout_marginBottom="@dimen/detail_margin"
+            android:layout_marginLeft="@dimen/detail_margin"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/detail_background" />
 
         <ListView
             android:id="@+id/detail_operation_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
 
-            android:layout_marginTop="20dp">
+            >
 
         </ListView>
 
