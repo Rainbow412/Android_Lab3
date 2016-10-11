@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-                final TextView full_name = (TextView)findViewById(R.id.name_full);
-                alertDialog.setTitle("删除联系人").setMessage("确定删除联系人"+full_name.getText()).setPositiveButton("确定",
+
+                alertDialog.setTitle("删除联系人").setMessage("确定删除联系人"+data1.get(position).get("姓名")).setPositiveButton("确定",
                         new DialogInterface.OnClickListener(){
                             @Override
                             public void onClick(DialogInterface dialog, int which){
