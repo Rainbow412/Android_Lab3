@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/detail_Rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+
+
+        >
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/detail_back_margin"
+            android:src="@mipmap/back_icon"
+            android:padding="0dp"
+            />
+
+        <TextView
+            android:id="@+id/detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/back_button"
+            android:layout_marginBottom="@dimen/detail_name_margin"
+            android:textSize="@dimen/detail_name_size"
+            android:textColor="@color/detail_name_white"
+            android:padding="0dp"
+
+
+
+
+
+            />
+
+        <ImageButton
+            android:id="@+id/detail_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/star_launcher"
+            android:layout_marginRight="@dimen/detail_star_margin"
+            android:layout_alignBottom="@+id/detail_name"
+            android:layout_alignParentRight="true"
+            android:padding="0dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:background="@color/detail_background">
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_information_list">
+
+        </ListView>
+
+        <ListView
+            android:id="@+id/detail_operation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="20dp">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

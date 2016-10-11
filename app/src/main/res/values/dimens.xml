@@ -7,4 +7,8 @@
     <dimen name="name_margin">15dp</dimen>
     <dimen name="full_name_size">18sp</dimen>
     <dimen name="abbr_name_size">20sp</dimen>
+    <dimen name="detail_name_size">25sp</dimen>
+    <dimen name="detail_back_margin">10dp</dimen>
+    <dimen name="detail_star_margin">10dp</dimen>
+    <dimen name="detail_name_margin">10dp</dimen>
 </resources>

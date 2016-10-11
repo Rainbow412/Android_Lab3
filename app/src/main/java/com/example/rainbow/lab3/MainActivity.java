@@ -1,6 +1,7 @@
 package com.example.rainbow.lab3;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 new String[]{"首字母","姓名"}, new int[]{R.id.name_abbr, R.id.name_full});
         listview.setAdapter(simpleAdapter);
 
-
+        //长按联系人删除
         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -85,8 +86,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                Bundle bundle = new Bundle();
 
+                bundle.putString("姓名", data1.get(position).get("姓名").toString());
+                bundle.putString("手机号", data1.get(position).get("手机号").toString());
+                bundle.putString("类型", data1.get(position).get("类型").toString());
+                bundle.putString("归属地", data1.get(position).get("归属地").toString());
+                bundle.putString("背景颜色", data1.get(position).get("背景颜色").toString());
 
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
     }
 }
