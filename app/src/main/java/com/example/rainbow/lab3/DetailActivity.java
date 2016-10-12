@@ -30,6 +30,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail);
 
+        //接收前一个Activity的数据
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String name = bundle.getString("姓名", "default value");
@@ -41,11 +42,9 @@ public class DetailActivity extends AppCompatActivity {
         //设置背景颜色
         RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.detail_Rlayout);
         relativeLayout.setBackgroundColor(Color.parseColor(bg_color));
-
         //设置名字
         TextView nameText = (TextView)findViewById(R.id.detail_name);
         nameText.setText(name);
-
         //设置电话、类型、归属地
         TextView numText = (TextView)findViewById(R.id.phone_num);
         numText.setText(phone_num);

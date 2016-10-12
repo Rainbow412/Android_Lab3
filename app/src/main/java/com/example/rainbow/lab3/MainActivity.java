@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    //所有联系人的所有信息都先用一个二维的String数组储存
     String[][] alldata = new String[][]{
             {"姓名","手机号","类型","归属地","背景颜色"},
             {"Aaron","17715523654","手机","江苏苏州电信","#BB4C3B"},
@@ -39,14 +40,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview_name);
 
-        final List<Map<String, Object>> data = new ArrayList<>();
-        for (int i1=1; i1<11; i1++) {
-            Map<String, Object> temp = new LinkedHashMap<>();
-            for(int j = 0; j < 5; j++)
-                temp.put(alldata[0][j], alldata[i1][j]);
-            data.add(temp);
-        }
-
         //data1:首字母、姓名
         final List<Map<String, Object>> data1 = new ArrayList<>();
         for (int i2 = 1; i2 < 11; i2++) {
@@ -55,11 +48,20 @@ public class MainActivity extends AppCompatActivity {
             temp.put("姓名", alldata[i2][0]);
             data1.add(temp);
         }
+        //填充通讯录列表里的ListView
         final ListView listview = (ListView)findViewById(R.id.contact_list);
         final SimpleAdapter simpleAdapter = new SimpleAdapter(this, data1, R.layout.abbr_full,
                 new String[]{"首字母","姓名"}, new int[]{R.id.name_abbr, R.id.name_full});
         listview.setAdapter(simpleAdapter);
 
+        //data:全部联系人的全部信息用List储存
+        final List<Map<String, Object>> data = new ArrayList<>();
+        for (int i1=1; i1<11; i1++) {
+            Map<String, Object> temp = new LinkedHashMap<>();
+            for(int j = 0; j < 5; j++)
+                temp.put(alldata[0][j], alldata[i1][j]);
+            data.add(temp);
+        }
         //短按联系人跳转
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }).create().show();
 
-                return true;
+                return true; //如果return false的话则长按是短按操作也会被触发
             }
         });
 

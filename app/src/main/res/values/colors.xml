@@ -7,12 +7,9 @@
     <color name="name_abbr">#FFFFFF</color>
     <color name="name_black">#000000</color>
     <color name="full_name_button">#00000000</color>
-
-
     <color name="detail_name_white">#FFFFFF</color>
     <color name="detail_black">#D5000000</color>
     <color name="detail_gray">#8A000000</color>
     <color name="detail_background">#1E000000</color>
-
     <color name="transparent_black">#00FFFFFF</color>
 </resources>

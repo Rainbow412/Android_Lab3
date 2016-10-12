@@ -4,14 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--联系人详情顶部-->
     <RelativeLayout
         android:id="@+id/detail_Rlayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="1">
 
-        >
-
+        <!--back按键-->
         <ImageButton
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
@@ -21,9 +21,9 @@
             android:layout_marginTop="@dimen/detail_back_marginTop"
             android:layout_marginLeft="@dimen/detail_margin"
             android:background="@drawable/back"
-            android:padding="0dp"
-            />
+            android:padding="0dp"/>
 
+        <!--姓名-->
         <TextView
             android:id="@+id/detail_name"
             android:layout_width="wrap_content"
@@ -33,12 +33,9 @@
             android:layout_marginBottom="@dimen/detail_name_marginBottom"
             android:textSize="@dimen/detail_name_size"
             android:textColor="@color/detail_name_white"
-            android:padding="0dp"
+            android:padding="0dp" />
 
-
-
-            />
-
+        <!--star按键-->
         <ImageButton
             android:id="@+id/detail_star"
             android:layout_width="wrap_content"
@@ -47,22 +44,22 @@
             android:layout_marginRight="@dimen/detail_margin"
             android:layout_alignBottom="@+id/detail_name"
             android:layout_alignParentRight="true"
-            android:padding="0dp"
-            />
-
+            android:padding="0dp" />
     </RelativeLayout>
 
+    <!--联系人详情中、下部-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="2"
-        >
+        android:layout_weight="2">
 
+        <!--联系人详情中部中的第一行-->
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
+            <!--手机号、类型、归属地-->
             <LinearLayout
                 android:id="@+id/num_type_where_layout"
                 android:layout_width="wrap_content"
@@ -73,41 +70,37 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp">
 
+                <!--手机号-->
                 <TextView
                     android:id="@+id/phone_num"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/detail_black"
+                    android:textColor="@color/detail_black" />
 
-                    android:text="18854211875"/>
-
+                <!--类型、归属地-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
+                    <!--类型-->
                     <TextView
                         android:id="@+id/type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/detail_gray"
+                        android:textColor="@color/detail_gray" />
 
-
-
-                        android:text="手机"/>
-
+                    <!--归属地-->
                     <TextView
                         android:id="@+id/where"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/detail_gray"
-                        android:layout_marginLeft="@dimen/type_where_space"
-
-
-                        android:text="山东青岛移动"/>
-
+                        android:layout_marginLeft="@dimen/type_where_space" />
                 </LinearLayout>
             </LinearLayout>
 
+            <!--chat按键左侧的竖线-->
             <View
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
@@ -115,9 +108,9 @@
                 android:layout_centerVertical="true"
                 android:layout_alignTop="@+id/chat_button"
                 android:layout_alignBottom="@+id/chat_button"
-                android:layout_toLeftOf="@+id/chat_button"
-                />
+                android:layout_toLeftOf="@+id/chat_button" />
 
+            <!--chat按键-->
             <ImageButton
                 android:id="@+id/chat_button"
                 android:layout_width="wrap_content"
@@ -127,17 +120,18 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/detail_margin"
                 android:layout_marginLeft="@dimen/detail_margin"
-                android:padding="0dp"
-                />
-
+                android:padding="0dp" />
         </RelativeLayout>
 
+        <!--联系人中部中间的横线-->
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:background="@color/detail_background"
             android:layout_marginLeft="@dimen/line_marginLeftRight"
             android:layout_marginRight="@dimen/line_marginLeftRight"/>
+
+        <!--更多资料-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -147,25 +141,18 @@
             android:layout_marginTop="@dimen/detail_margin"
             android:layout_marginBottom="@dimen/detail_margin"
             android:layout_marginLeft="@dimen/detail_margin"/>
+
+        <!--联系人中下部之间的分隔-->
         <View
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:background="@color/detail_background" />
 
+        <!--联系人下部的listview-->
         <ListView
             android:id="@+id/detail_operation_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-
-            >
-
+            android:layout_height="match_parent">
         </ListView>
-
     </LinearLayout>
-
-
-
-
-
 </LinearLayout>
