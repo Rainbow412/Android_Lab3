@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which){
                                 //删除联系人
                                 data1.remove(position);
+                                data.remove(position);
                                 simpleAdapter.notifyDataSetChanged();
                             }
                         }).setNegativeButton("取消",
